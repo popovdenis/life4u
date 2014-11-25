@@ -1,0 +1,3 @@
+lifesafe4u_basic_homepage:
+    pattern:  /
+    defaults: { _controller: LifeSafe4UBasicBundle:Default:index }

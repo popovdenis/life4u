@@ -1,0 +1,8 @@
+parameters:
+    lifesafe4u_user.user_manager.class: LifeSafe4U\UserBundle\Model\UserManager
+services:
+    lifesafe4u_user.user_manager:
+        class: %lifesafe4u_user.user_manager.class%
+        parent: lifesafe4u_basic.manager
+        arguments:
+            - @security.encoder_factory

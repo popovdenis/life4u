@@ -1,0 +1,84 @@
+LifeSafe4U\UserBundle\Entity\User:
+    type: entity
+    table: user
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: IDENTITY
+        email:
+            type: string
+            length: 100
+            nullable: true
+            unique: true
+        password:
+            type: string
+            length: 100
+        salt:
+            type: string
+            length: 100
+        roles:
+            type: array
+        emailConfirmed:
+            type: boolean
+            nullable: true
+            column: email_confirmed
+        firstName:
+            type: string
+            length: 100
+            column: first_name
+        lastName:
+            type: string
+            length: 100
+            column: last_name
+        phone:
+            type: string
+            length: 100
+        picture:
+            type: string
+            nullable: true
+            column: picture
+        locale:
+            type: string
+            length: 5
+            nullable: true
+        enabled:
+            type: boolean
+        createdAt:
+            type: datetime
+            column: created_at
+        updatedAt:
+            type: datetime
+            nullable: true
+            column: updated_at
+        deletedAt:
+            type: datetime
+            nullable: true
+            column: deleted_at
+        lastLogin:
+            type: datetime
+            nullable: true
+            column: last_login
+        passwordRequestedAt:
+            type: datetime
+            nullable: true
+            column: password_requested_at
+        confirmationToken:
+            type: string
+            nullable: true
+            column: confirmation_token
+        emailOld:
+            type: string
+            length: 150
+            nullable: true
+            column: email_old
+    lifecycleCallbacks:
+        prePersist:
+            - preUpload
+        preUpdate:
+            - preUpload
+        postPersist:
+            - upload
+        postUpdate:
+            - upload

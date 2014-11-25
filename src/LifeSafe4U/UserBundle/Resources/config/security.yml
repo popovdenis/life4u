@@ -1,0 +1,10 @@
+services:
+    lifesafe4u_user.user_provider:
+        class: LifeSafe4U\UserBundle\Security\UserProvider
+        public: false
+        arguments:
+            - @lifesafe4u_user.user_manager
+    kernel.listener.access_denied.handler:
+        class: LifeSafe4U\UserBundle\Security\AccessDeniedHandler
+        tags:
+            - { name: kernel.event_listener, event: security.kernel_response, method: handle}

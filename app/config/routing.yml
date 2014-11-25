@@ -1,0 +1,8 @@
+lifesafe4u_basic:
+    resource: "@LifeSafe4UBasicBundle/Resources/config/routing.yml"
+    prefix:   /
+
+lifesafe4u_user:
+    resource: "@LifeSafe4UUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
